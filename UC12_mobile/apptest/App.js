@@ -11,15 +11,16 @@ import { View, Text, Image } from 'react-native';
 
 class App extends Component{
   render(){
-     let nome = 'Aurora'
-     let imagem = 'https://cdn-icons-png.flaticon.com/512/1596/1596580.png'
 
+    let castelo = 'Nárnia'
+    
     return(
       <View>
-        <Text style={{fontSize: 30, fontFamily: 'sans-serif', color: 'violet', textAlign:'center', marginTop: 100 }}>{nome}</Text>
-        <Image source={{uri:imagem}} 
-        style={{width:300, height:300, marginTop: 50 }}>
-        </Image>
+        <Text style={{fontSize: 30, textAlign:'center', marginTop: 30}}>{castelo}</Text>
+        <Cartao nome='Aurora' altura={50} largura={60}></Cartao>
+        <Cartao nome='Bella' altura={40} largura={50}></Cartao>
+        <Cartao nome='Sophia' altura={30} largura={40}></Cartao>
+        
       </View>
     );
   }
@@ -28,3 +29,15 @@ class App extends Component{
 export default App
 
 
+class Cartao extends Component{
+  render(){
+    let imagem = 'https://cdn-icons-png.flaticon.com/512/1596/1596580.png'
+
+    return(
+      <View>
+        <Text style={{fontSize: 30, color: 'violet', textAlign:'center', marginTop: 40}}>{this.props.nome}</Text>
+        <Image source={{uri:imagem}} style={{width:this.props.altura, height:this.props.largura}}></Image>
+      </View>
+    );
+  }
+}
