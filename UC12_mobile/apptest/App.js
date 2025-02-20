@@ -1,43 +1,49 @@
 import React, { Component } from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, Button } from 'react-native';
 
-/*export default function App(){
-  return(
-    <View>
-       <Text>Olá mundo</Text>
-    </View>
-  )
-}*/
+//3 notícias com titulo e imagem
 
-class App extends Component{
-  render(){
 
-    let castelo = 'Nárnia'
-    
-    return(
-      <View>
-        <Text style={{fontSize: 30, textAlign:'center', marginTop: 30}}>{castelo}</Text>
-        <Cartao nome='Aurora' altura={60} largura={70}></Cartao>
-        <Cartao nome='Bella' altura={50} largura={60}></Cartao>
-        <Cartao nome='Sophia' altura={40} largura={50}></Cartao>
-        
-      </View>
-    );
-  }
+  class App extends Component{
+
+    constructor(props){
+   super(props);
+   this.state = {titulo: 'Notícias'}
+   this.entrar = this.entrar.bind(this)
+    }
+
+entrar(titulo){
+
+this.setState({titulo:titulo})
+
 }
 
-export default App
+    render(){
+          
+        return(
+          <View style={{marginTop: 30, alignItems: 'center'}}>
+            <Text style={{margin: 50, fontSize: 30}}>{this.state.titulo}</Text> 
+             <Button title='Entrar' onPress={ ()=> this.entrar('novo 1')}></Button>
+             <Button title='Entrar' onPress={ ()=> this.entrar('novo 2')}></Button>
+             <Button title='Entrar' onPress={ ()=> this.entrar('novo 3')}></Button>
+          </View>
+        );
+    }
+}
 
+ export default App
 
 class Cartao extends Component{
-  render(){
-    let imagem = 'https://cdn-icons-png.flaticon.com/512/1596/1596580.png'
+    render(){
 
-    return(
-      <View style={{alignItems: 'center'}}>
-        <Text style={{fontSize: 30, color: 'violet', textAlign:'center', marginTop: 40}}>{this.props.nome}</Text>
-        <Image source={{uri:imagem}} style={{width:this.props.altura, height:this.props.largura}}></Image>
-      </View>
-    );
+       let imagem = 'https://www12.senado.leg.br/noticias/materias/2020/09/15/agravamento-de-incendios-em-mato-grosso-do-sul-mobiliza-senadores/fogo-pantanal-br-262-foto-chico-ribeiro-33-copia.jpg/mural/imagem_materia'
+
+       return(
+        <View  style={{}}>
+          <Text style={{fontSize: 20, color: 'black', marginLeft: 20, marginTop: 20}}>{this.props.noticia}</Text>
+          <Image source={{uri:imagem}} style={{alignSelf: 'center', width:this.props.altura, height:this.props.largura, marginTop: 50}}></Image>
+        </View>
+      );
+    }
   }
-}
+  
