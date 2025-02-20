@@ -17,9 +17,9 @@ class App extends Component{
     return(
       <View>
         <Text style={{fontSize: 30, textAlign:'center', marginTop: 30}}>{castelo}</Text>
-        <Cartao nome='Aurora' altura={50} largura={60}></Cartao>
-        <Cartao nome='Bella' altura={40} largura={50}></Cartao>
-        <Cartao nome='Sophia' altura={30} largura={40}></Cartao>
+        <Cartao nome='Aurora' altura={60} largura={70}></Cartao>
+        <Cartao nome='Bella' altura={50} largura={60}></Cartao>
+        <Cartao nome='Sophia' altura={40} largura={50}></Cartao>
         
       </View>
     );
@@ -34,7 +34,7 @@ class Cartao extends Component{
     let imagem = 'https://cdn-icons-png.flaticon.com/512/1596/1596580.png'
 
     return(
-      <View>
+      <View style={{alignItems: 'center'}}>
         <Text style={{fontSize: 30, color: 'violet', textAlign:'center', marginTop: 40}}>{this.props.nome}</Text>
         <Image source={{uri:imagem}} style={{width:this.props.altura, height:this.props.largura}}></Image>
       </View>
