@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Image, Button, ScrollView, StyleSheet } from 'react-native';
+import { View, Text, Image, Button, ScrollView, StyleSheet, TextInput } from 'react-native';
 
 class App extends Component {
 
@@ -112,6 +112,4 @@ const styles = StyleSheet.create({
 });
 
 export default App
-
-
 
