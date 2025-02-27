@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Image, Button, ScrollView, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
 
 class App extends Component{
@@ -34,3 +34,5 @@ class App extends Component{
   });
 
   export default App
+
+ 

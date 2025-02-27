@@ -19,13 +19,17 @@ class App extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.titulo}>{this.state.titulo}</Text>
+
+   <View style={styles.container}>
+      <View style={styles.view}>
+        <Text style={{color: 'white', margin: 20, fontSize: 25}}>Brasil Notícias</Text>
+        </View>
         <Button title='Ver Notícia' onPress={() => this.entrar('Notícia 1', 'https://imagens.ebc.com.br/AYxGxkogz-1PWAls2_l1vtoGkXI=/1170x700/smart/https://agenciabrasil.ebc.com.br/sites/default/files/thumbnails/image/_ja_2165_0.jpg?itok=ZXtrpUXD', 'Incêndio no Pantanal')} />
         <Text style={styles.text}></Text>
         <Button title='Ver Notícia' onPress={() => this.entrar('Notícia 2', 'https://services.meteored.com/img/article/desmatamento-na-amazonia-cresce-pelo-5-mes-seguido-com-o-para-liderando-o-ranking-de-degradacao-1732733824825_512.png', 'Desmatamento na Amazônia')} />
         <Text style={styles.text}></Text>
         <Button title='Ver Notícia' onPress={() => this.entrar('Notícia 3', 'https://wwfbrnew.awsassets.panda.org/img/original/certaf.jpg', 'Crise de Água no Brasil')} />
+
 
         <ScrollView style={styles.noticia}>
           <Cartao
@@ -35,7 +39,11 @@ class App extends Component {
             largura={300}
           />
         </ScrollView>
+        <View style={{backgroundColor: '#666', width: 393, height: 30, alignItems: 'center' }}>
+          <Text style={{ color: 'white', margin: 5}}>blablabla@gmail.com</Text>
+          </View>
       </View>
+    
     );
   }
 }
@@ -43,21 +51,33 @@ class App extends Component {
 class Cartao extends Component {
   render() {
     return (
+  
       <View style={styles.container}>
         <Text style={styles.text2}>
           {this.props.noticia}
         </Text>
         <Image source={{ uri: this.props.imagem }} style={styles.img} />
       </View>
+    
     );
   }
 }
 
 const styles = StyleSheet.create({
   container:{
-    marginTop: 20,
+    flex: 1,
+    marginTop: 30,
     alignItems: 'center',
-    marginBottom: 20
+     
+  },
+
+  view:{
+    alignItems: 'center',
+    margin: 70,
+    marginTop: -30,
+    backgroundColor: '#666',
+    height: 70,
+    width: 400
   },
 
   titulo:{
@@ -70,7 +90,7 @@ const styles = StyleSheet.create({
   },
 
   noticia:{
-    marginTop: 20
+    marginTop: 5
   },
 
   text2:{
@@ -79,11 +99,11 @@ const styles = StyleSheet.create({
     color: 'black', 
     margin: 20, 
     marginTop: 20, 
-    textAlign: 'center' 
+    
   },
 
   img:{
-    alignSelf: 'center', 
+    borderRadius: 5,
     width: 300, 
     height: 250, 
     marginTop: 30 
@@ -94,5 +114,4 @@ const styles = StyleSheet.create({
 export default App
 
 
-  //3 notícias com titulo e imagens diferentes ao clicar os botoes
 
