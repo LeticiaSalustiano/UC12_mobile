@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text, Image, Button, ScrollView, StyleSheet, TextInput } from 'react-native';
+import { View, Text, Button, ScrollView, StyleSheet, FlatList } from 'react-native';
+import Cartao from './src/Noticia/noticia.js';
 
 class App extends Component {
 
@@ -48,21 +49,6 @@ class App extends Component {
   }
 }
 
-class Cartao extends Component {
-  render() {
-    return (
-  
-      <View style={styles.container}>
-        <Text style={styles.text2}>
-          {this.props.noticia}
-        </Text>
-        <Image source={{ uri: this.props.imagem }} style={styles.img} />
-      </View>
-    
-    );
-  }
-}
-
 const styles = StyleSheet.create({
   container:{
     flex: 1,
@@ -93,23 +79,6 @@ const styles = StyleSheet.create({
     marginTop: 5
   },
 
-  text2:{
-    fontFamily: 'arial', 
-    fontSize: 25, 
-    color: 'black', 
-    margin: 20, 
-    marginTop: 20, 
-    
-  },
-
-  img:{
-    borderRadius: 5,
-    width: 300, 
-    height: 250, 
-    marginTop: 30 
-  }
-
 });
 
 export default App
-

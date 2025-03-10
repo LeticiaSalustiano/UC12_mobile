@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, Button, StyleSheet, TextInput } from 'react-native';
 
+//faca com que ao escrever o nome no input ao clicar o botao aparece o texto + nome
 class App extends Component{
   constructor(props){
     super(props);
@@ -8,15 +9,15 @@ class App extends Component{
       nome: ''
     };
 
-    this.pegar = this.pegar.bind(this);
+    this.entrar = this.entrar.bind(this);
   }
 
-  pegar(texto){
-    if(texto.length > 0){
-    this.setState({nome: 'Olá, seja bem vindo(a)! ' + texto});
-  } else{
-  this.setState({nome: ''})
-  }
+  entrar(){
+    if (this.state.input === ''){
+    alert('Adicione o seu nome!')
+    return;
+}
+    this.setState({nome: 'Olá, seja bem vindo(a)! ' + this.state.input});
 }
 
   render(){
@@ -24,8 +25,8 @@ class App extends Component{
     return(
       <View style={estilos.container}>
         <TextInput style={estilos.caixa} placeholder='Digite seu nome' 
-        onChangeText={this.pegar}></TextInput>
-        <Button title='Entrar' onPress={() => this.pegar(this.state.nome)} style={estilos.btn}><Text>{this.state.nome}</Text></Button>
+        onChangeText={ (texto)=> this.setState ({input: texto})}></TextInput>
+        <Button title='Entrar' onPress={this.entrar} style={estilos.btn}></Button>
         <Text style={estilos.texto}>{this.state.nome}</Text>
       </View>
     );
@@ -54,7 +55,7 @@ const estilos = StyleSheet.create({
      },
 
      btn:{
-      
+      padding: 30
      }
 });
 
