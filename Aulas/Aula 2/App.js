@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text, Button, ScrollView, StyleSheet, FlatList } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
+
+
 import Cartao from './src/Noticia/noticia.js';
 
 class App extends Component {
